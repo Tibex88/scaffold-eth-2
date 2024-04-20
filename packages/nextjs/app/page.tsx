@@ -104,9 +104,9 @@ const Home: NextPage = () => {
       </div>
   
       <div className="flex outline">
-        {[1,2,3].map(()=>{
+        {[{name:"Silver", value:"0.02-0.04"},{name:"Gold", value:"0.05-0.08"},{name:"Diamond", value:"0.09-0.12"}].map((item,index)=>{
           return(
-            <Tier />
+            <Tier key={index} level={item.name} amount={item.value}/>
           )
         })}
       </div>

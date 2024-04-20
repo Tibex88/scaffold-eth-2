@@ -3,6 +3,7 @@
 import { RainbowKitCustomConnectButton } from '~~/components/scaffold-eth';
 import {Timeline} from '../../components/Timeline';
 import type { NextPage } from "next";
+import { Tier } from '~~/components/Tier';
 
 const data = [
     {
@@ -97,6 +98,14 @@ const IDO: NextPage = () => {
         </div>
         )
     })}
+
+<div className="flex outline">
+        {[{name:"Silver", value:"0.02-0.04"},{name:"Gold", value:"0.05-0.08"},{name:"Diamond", value:"0.09-0.12"}].map((item,index)=>{
+          return(
+            <Tier key={index} level={item.name} amount={item.value}/>
+          )
+        })}
+      </div>
 
     {[1,2,3].map(()=>{
         return(       
