@@ -1,10 +1,8 @@
 "use client";
 
-import { Tier } from '~~/components/Tier';
-import {Timeline} from '../../components/Timeline';
-import {Pools} from '../../components/Pools';
-import type { NextPage } from "next";
 import { RainbowKitCustomConnectButton } from '~~/components/scaffold-eth';
+import {Timeline} from '../../components/Timeline';
+import type { NextPage } from "next";
 
 const data = [
     {
@@ -35,30 +33,21 @@ solution for dApps aimed at improving user interactions without the usual comple
 
 
 
-const Profile: NextPage = () => {
+const IDO: NextPage = () => {
 
     return(
-    <div className=" flex flex-1 gap-5">
+    <div className=" flex flex-1 ">
 
     <div className="flex flex-col gap-10 coutline">
 
-        {/* <div className='outline p-5 flex flex-col gap-5'>
-            {['profile', 'tier', 'my pools'].map((item)=>{
-                return(
-                    <p className='capitalize'>
-                        {item}
-                    </p>
-                )
-            })}
-            
-
-        </div> */}
-
-        {/* <div className="cbg-blue-500 w-fit pl-10 pr-10 rounded-2xl overflow-hidden sticky">
+        <div className="cbg-blue-500 w-fit pl-10 pr-10 rounded-2xl overflow-hidden sticky">
 
             <p>Profile</p>
             <Timeline />
-        </div> */}
+        </div>
+
+        <RainbowKitCustomConnectButton />
+
         
         {/* <div className="cbg-red-500 w-fit h-fit p-10 flex flex-col gap-5">
             <p className="mb-10">Please connect your wallet to participate</p>
@@ -67,46 +56,8 @@ const Profile: NextPage = () => {
 
     </div>
 
-    <div className="w-full cbg-blue-600 flex flex-col gap-4 p-5">
-        
-        <div className='bg-black outline outline-1 p-5 '>
-
-        <p>My Profile</p>
-            <p>
-                <span>
-                wallet Information
-                </span>
-                <span>
-                <RainbowKitCustomConnectButton />
-                </span>
-            </p>
-
-            <p>
-                <span> KYC Status </span>
-                <span className='text-red-500'> Unverified </span>
-            </p>
-        </div>
-
-        <div className='bg-black outline outline-1 p-5 '>
-
-            <p>Tiers</p>
-
-            <div className='flex'>
-                {[1,2,3].map((i,index)=>{
-                    return( <Tier /> ) 
-                })}
-            </div>
-
-            <button>Stake Now</button>
-        </div>
-
-        <p>Pools</p>
-
-        <div className='bg-black outline outline-1 p-5'>
-            <Pools />
-        </div>
-        
-        {/* <div className="flex justify-between items-center coutline">
+    <div className="w-full flex flex-col gap-4">
+        <div className="flex justify-between items-center coutline">
 
             <div className="flex gap-3 items-center ">
                 <div className="bg-[url('/assets/bg.png')] bg-white bg-contain w-20 aspect-square outline bg-center bg-no-repeat"></div>
@@ -156,11 +107,10 @@ const Profile: NextPage = () => {
         </p>
     </div>
     )
-    })} */}
+    })}
     </div>
-
 </div>
     )
 }
 
-export default Profile
+export default IDO

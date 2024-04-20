@@ -30,14 +30,16 @@ export const Nav =  () => {
             <img src="../assets/pot3.png" className="aspect-square h-16" alt="" />
             <div className="flex w-full gap-10 pl-8">
             {/* <!-- <div className="flex justify-around w-full gap-5"> --> */}
-            <p>
+            <Link href="/">
             <fa icon="rocket" className="text-laser text-xl" />
-                Launch Pad</p>
-            <p className="text-start">
+                Launch Pad
+            </Link>
+
+            <Link href="/staking" className="text-start">
                 <img src="../assets/coin.png" className="h-6 aspect-square m-auto inline"  alt=""/>
                 Staking
-            </p>
-            <p>Learn</p>
+            </Link>
+            {/* <p>Learn</p> */}
             </div>
             </div>
             
@@ -52,9 +54,9 @@ export const Nav =  () => {
         {/* <!-- end of nav --> */}
         <div className="flex justify-between items-center w-full">
             <div className="flex justify-end w-full gap-10 pr-8">
-            <Link href="/" className="text-red-500 cursor-pointer"> 
+            {/* <Link href="/" className="text-red-500 cursor-pointer"> 
                 Home 
-            </Link>
+            </Link> */}
             
             <Link href="/profile" className="text-red-500 cursor-pointer">
             Profile
