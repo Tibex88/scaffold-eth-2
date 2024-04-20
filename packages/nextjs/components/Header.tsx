@@ -64,47 +64,36 @@ export const Header = () => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
-      <div className="navbar-start w-auto lg:w-1/2">
-        <div className="lg:hidden dropdown" ref={burgerMenuRef}>
-          <label
-            tabIndex={0}
-            className={`ml-1 btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
-            onClick={() => {
-              setIsDrawerOpen(prevIsOpenState => !prevIsOpenState);
-            }}
-          >
-            <Bars3Icon className="h-1/2" />
-          </label>
-          {isDrawerOpen && (
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              onClick={() => {
-                setIsDrawerOpen(false);
-              }}
-            >
-              <HeaderMenuLinks />
-            </ul>
-          )}
-        </div>
-        <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
-          <div className="flex relative w-10 h-10">
-            <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold leading-tight">Scaffold-ETH</span>
-            <span className="text-xs">Ethereum dev stack</span>
-          </div>
-        </Link>
-        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
-          <HeaderMenuLinks />
-        </ul>
+    <div className="decor">
+      {/* <!-- outer border --> */}
+      <div className="flex w-full h-full justify-between absolute overflow-hidden">
+         
+        {/* <!-- mid --> */}
+        <div className="w-full h-4 bg-red-800 absolute inset-0"></div>
+       
+        {/* <!-- sides --> */}
+        {[1,2].map((i,index)=>{
+        return(
+          <div 
+            className="w-4 h-[60vh]  bg-red-800 relative overflow-hidden">
+            <div className="aspect-square w-5 h-10 cbg-[dfsdf'./sdsdffsdfs../assetdsdfsdfs/splash.png')] bg-cover mix-blend-difference rotate-180 absolute -bottom-2"></div>
+          </div>   
+        )
+        })}
+      </div> 
+
+      {/* <!-- inner border --> */}
+      <div className="p-6 flex justify-between absolute  w-full z-0">
+        
+        {/* <!-- <div> --> */}
+          <img src="../assets/border(3).svg" className="aspect-auto h-24 nborder-t-4 border-red-800" alt="" />
+        {/* <!-- </div> --> */}
+                
+        {/* <!-- <div> --> */}
+          <img src="../assets/border(3).svg" className="aspect-auto h-24 nborder-t-4 border-red-800 -scale-x-[1]" alt="" />
+        {/* <!-- </div> --> */}
       </div>
-      <div className="navbar-end flex-grow mr-4">
-        <RainbowKitCustomConnectButton />
-        <FaucetButton />
-      </div>
-    </div>
+
+  </div>
   );
 };

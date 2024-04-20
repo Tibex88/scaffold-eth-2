@@ -13,6 +13,7 @@ import { ProgressBar } from "~~/components/scaffold-eth/ProgressBar";
 import { useNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { useGlobalState } from "~~/services/store/store";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
+import {Nav} from "./Nav"
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
   const price = useNativeCurrencyPrice();
@@ -26,9 +27,18 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="relative flex flex-col flex-1">{children}</main>
+  <div className="w-screen h-screen overflow-y-scroll bg-[url('/assets/bg.png')] bg-no-repeat bg-contain bg-fixed bg-center">
+    
+    <div className="  fixed w-full z-[9] cbg-red-500 backdrop-filter backdrop-blur-lg ">
+          <Header />
+          <Nav />
+    </div>
+        {/* <main classNameName="relative flex flex-col flex-1"> */}
+        <div className="max-w-[1200px] pt-32 md:pt-44 m-auto flex flex-col gap-10 mt-10 ">
+
+          {children}
+          </div>
+          {/* </main> */}
         <Footer />
       </div>
       <Toaster />
